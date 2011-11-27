@@ -19,14 +19,14 @@ describe PagesController do
   end
 
   # Testing FAQ page  
-  describe "GET 'FAQ'" do
+  describe "GET 'faq'" do
     it "returns http success" do
-      get 'FAQ'
+      get 'faq'
       response.should be_success
     end
 	
     it "should have the right title" do
-      get 'FAQ'
+      get 'faq'
       response.should have_selector("title",
                         :content => "CollegeZen")
     end		

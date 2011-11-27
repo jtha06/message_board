@@ -1,8 +1,12 @@
 MessageBoard::Application.routes.draw do
+  
+  root :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
-  match '/FAQ',    :to => 'pages#FAQ'
-  root :to => 'pages#home'
+  match '/faq',   :to => 'pages#faq'
+  
+  match '/signup',  :to => 'users#new'
+    
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
