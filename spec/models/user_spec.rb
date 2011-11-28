@@ -6,6 +6,7 @@ describe User do
     attributes[:email] ||= 'foo@example.com'
     attributes[:password] ||= 'abc123'
     attributes[:password_confirmation] ||= attributes[:password]
+	attributes[:zen_points] ||= 0
     User.new(attributes)
   end
 
