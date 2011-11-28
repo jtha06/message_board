@@ -1,18 +1,18 @@
 source 'http://rubygems.org'
 
-source 'http://rubygems.org'
-
 gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development do
   gem 'rspec-rails'
   gem 'annotate'
   gem 'faker'
+  gem 'nifty-generators'
+  gem 'annotate'
 end
 
 group :test do
@@ -33,3 +33,4 @@ end
 gem 'jquery-rails'
 
 
+gem "mocha", :group => :test

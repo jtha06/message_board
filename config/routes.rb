@@ -1,13 +1,18 @@
 MessageBoard::Application.routes.draw do
+  resources :sessions
+  resources :users
   
   root :to => 'pages#home'
-  match '/contact', :to => 'pages#contact'
-  match '/about',   :to => 'pages#about'
+  match '/contact', :to => 'pages#contact', :as => :contact
+  match '/about',   :to => 'pages#about', :as => :about
   match '/faq',   :to => 'pages#faq'
   
-  match '/signup',  :to => 'users#new'
-    
+  match '/user/edit' => 'users#edit', :as => :edit_current_user
+  match '/signup' => 'users#new', :as => :signup
   
+  match '/logout' => 'sessions#destroy', :as => :logout
+  match '/login' => 'sessions#new', :as => :login
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
