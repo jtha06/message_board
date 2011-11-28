@@ -6,6 +6,7 @@ gem 'sqlite3'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'pg'
 
 group :development do
   gem 'rspec-rails'
@@ -20,6 +21,7 @@ group :test do
   gem 'webrat'
   gem 'spork'
   gem 'factory_girl_rails'
+  gem 'mocha'
 end
 
 # Gems used only for assets and not required
@@ -31,6 +33,3 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-
-gem "mocha", :group => :test
