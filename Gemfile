@@ -1,19 +1,18 @@
 source 'http://rubygems.org'
 
+source 'http://rubygems.org'
+
 gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
-gem "bcrypt-ruby", :require => "bcrypt"
-gem 'pg'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development do
   gem 'rspec-rails'
   gem 'annotate'
   gem 'faker'
-  gem 'nifty-generators'
-  gem 'annotate'
 end
 
 group :test do
@@ -21,7 +20,6 @@ group :test do
   gem 'webrat'
   gem 'spork'
   gem 'factory_girl_rails'
-  gem 'mocha'
 end
 
 # Gems used only for assets and not required
@@ -33,3 +31,5 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+
