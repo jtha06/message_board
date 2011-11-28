@@ -7,7 +7,7 @@ MessageBoard::Application.routes.draw do
   match '/about',   :to => 'pages#about', :as => :about
   match '/faq',   :to => 'pages#faq'
   
-  match '/user/edit' => 'users#edit', :as => :edit_current_user
+  match '/users/edit' => 'users#edit', :as => :edit_current_user
   match '/signup' => 'users#new', :as => :signup
   
   match '/logout' => 'sessions#destroy', :as => :logout
