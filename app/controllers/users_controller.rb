@@ -4,7 +4,7 @@ class UsersController < ApplicationController
  
   def show
     @user = User.find(params[:id])
-    @title = [@user.firstname,@user.lastname].join(' ').squeeze(' ')
+	@title = [@user.firstname,@user.lastname].join(' ').squeeze(' ')
 	@email = @user.email
   end
 

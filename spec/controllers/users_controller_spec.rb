@@ -8,7 +8,7 @@ describe UsersController do
       get 'new'
       response.should be_success
     end
-	
+
 	it "should have the right title" do
       get 'new'
       response.should have_selector("title", :content => "CollegeZen")
@@ -35,7 +35,7 @@ describe UsersController do
       get :show, :id => @user
       response.should have_selector("h1", :content => @user.firstname)
     end    
-	
+
 	it "should include the user's lastname" do
       get :show, :id => @user
       response.should have_selector("h1", :content => @user.lastname)

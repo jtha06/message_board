@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :firstname, :lastname, :zenpoints
   has_secure_password
   
-  validates_presence_of :email, :firstname, :lastname, :zenpoints
+  validates_presence_of :email, :firstname, :lastname
   validates_length_of :firstname, :lastname, :maximum => 20
   validates_length_of :password, :maximum => 20
   validates_length_of :password, :minimum => 4, :allow_blank => true

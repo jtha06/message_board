@@ -1,3 +1,1 @@
-This is CollegeZen Application. It uses Forem engine for Rails 3.1.
-Need to do type rake db:migrate, rake db:test:prepare, and rake assets:precompile to create the user database and precompile assets
-
+This is CollegeZen Application.

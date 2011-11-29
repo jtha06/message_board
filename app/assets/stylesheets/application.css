@@ -3,20 +3,15 @@ html {
 }
 
 .container {
-  width: 710px;
+  width: 900px;
 }
 
 body {
-  background: #cff;
+  background: url(../images/background.png) #DDD;
 }
 
 header {
-  padding-top: 20px;
-}
-
-header img {
-  padding: 1em;
-  background: #fff;
+  padding-top: 15px;
 }
 
 section {
@@ -30,10 +25,6 @@ section h1 {
   font-size: 200%;
 }
 
-li {
-	list-style:none;
-}
-
 /* Links for the page*/
 
 a {
@@ -42,11 +33,11 @@ a {
 }
 
 a:hover {
-  color: #069;
+  color:#004560
 }
 
 a:visited {
-  color: #069;
+  color:#004560
 }
 
 /* Top-right Navigation */
@@ -56,9 +47,10 @@ nav {
 }
 
 nav {
-  background-color: white;
-  padding: 0 0.7em;
+  background-color:#83BFDE;
+  padding: 0 0.2em;
   white-space: nowrap;
+  font-size:14px;
 }
 
 nav ul {
@@ -73,28 +65,21 @@ nav ul li {
 }
 
 nav ul li a {
-  padding: 0 5px;
-  font-weight: bold;
-}
-
-nav ul li a:visited {
-  color: #09c;
+  display:block;
+  font-weight:700;
+  padding-bottom:10px;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:10px;
+  color:#004560
 }
 
 nav ul li a:hover {
-
-}
-
-/* User information page */
-
-div.profile {
-  width: 100%;
-  margin-bottom: 0;
-}
-
-.profile img.gravatar {
-  border: 1px solid #999;
-  margin-bottom: -15px;
+  background: #5291B2;
+  border-bottom-left-radius:10px 10px;
+  border-bottom-right-radius:10px 10px;
+  border-top-left-radius:10px 10px;
+  border-top-right-radius:10px 10px;
 }
 
 /* Signup button */
@@ -122,4 +107,27 @@ a.signup_button:hover {
   border-radius:         10px;
 }
 
+/* User Information Page */
 
+div.profile li {	
+  list-style-type:none;
+  margin-left:-20px;
+}
+
+div.user_info{
+  width:300px;
+  background:#83BFDE;
+  padding:10px;
+}
+
+div.user_info ul{
+  margin-bottom:0;
+}
+
+div.user_info li{
+  margin-bottom:1px;
+}
+
+div.user_info span {
+  font-weight:bold;
+}
