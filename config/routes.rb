@@ -1,5 +1,6 @@
 MessageBoard::Application.routes.draw do
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
   
   root :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
@@ -7,7 +8,8 @@ MessageBoard::Application.routes.draw do
   match '/faq',   :to => 'pages#faq'
   
   match '/signup',  :to => 'users#new'
-    
+  match '/login',  :to => 'sessions#new'
+  match '/logout', :to => 'sessions#destroy'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

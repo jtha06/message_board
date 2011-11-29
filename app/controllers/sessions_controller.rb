@@ -1,20 +1,31 @@
 class SessionsController < ApplicationController
   def new
+    if user = User.find_by_password_digest(cookies[:digest])
+      session[:user_id] = user.id
+      redirect_to user, :notice => "Welcome back #{user.firstname}!"
+    end
   end
 
   def create
-    user = User.authenticate(params[:login], params[:password])
-    if user
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to_target_or_default root_url, :notice => "Logged in successfully."
+      if params["remember_me"] == "1"
+        cookies[:digest] = {:value => user.password_digest, :expires => Time.now + 360000}
+      else
+        cookies[:digest] = nil
+      end
+      redirect_to user, :notice => "Logged in!"
     else
-      flash.now[:alert] = "Invalid login or password."
-      render :action => 'new'
+      flash.now.alert = "Invalid email or password"
+      render "new"
     end
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to root_url, :notice => "You have been logged out."
+    user = User.find_by_password_digest(cookies[:digest])
+	session[:member_id] = nil
+    cookies[:digest] = nil
+    redirect_to root_url, :notice => "See you later #{user.firstname}!"
   end
 end
