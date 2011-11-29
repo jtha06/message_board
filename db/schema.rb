@@ -23,4 +23,6 @@ ActiveRecord::Schema.define(:version => 20111128231345) do
     t.integer  "zenpoints"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
 end

@@ -20,8 +20,8 @@ describe User do
     @attr = { :firstname => "Foo",
 			  :lastname => "Bar",
 			  :email => "user@example.com",
-			  :password => "asdfbv",
-			  :password_confirmation => "asdfbv",
+			  :password => "asdfgh",
+			  :password_confirmation => "asdfgh",
 			  :zenpoints => 0
 			}
   end

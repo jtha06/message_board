@@ -30,6 +30,10 @@ section h1 {
   font-size: 200%;
 }
 
+li {
+	list-style:none;
+}
+
 /* Links for the page*/
 
 a {
@@ -81,6 +85,18 @@ nav ul li a:hover {
 
 }
 
+/* User information page */
+
+div.profile {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.profile img.gravatar {
+  border: 1px solid #999;
+  margin-bottom: -15px;
+}
+
 /* Signup button */
 
 a.signup_button {
@@ -105,3 +121,5 @@ a.signup_button:hover {
   -webkit-border-radius: 10px;
   border-radius:         10px;
 }
+
+

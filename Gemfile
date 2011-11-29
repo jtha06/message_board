@@ -1,13 +1,12 @@
 source 'http://rubygems.org'
 
-source 'http://rubygems.org'
-
 gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'jquery-rails'
 
 group :development do
   gem 'rspec-rails'
@@ -30,6 +29,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+
 
 

@@ -1,1 +1,19 @@
-<%= @user.firstname %> <%= @user.lastname %>, <%= @user.email %>
+<div class="profile">
+	<h1>
+		<%= gravatar_image_tag @email %>
+		<%= @title %>  
+	</h1>
+	<div class="user_info round">
+		<ul>
+			<li>
+				<span>Name: </span> <%= @title %>
+			</li>
+			<li>
+				<span>Email: </span> <%= @email %>
+			</li>
+			<li>
+				<span>Zen Points: </span> <%= @user.zenpoints %>
+			</li>  
+		</ul>
+	</div>
+</div>
