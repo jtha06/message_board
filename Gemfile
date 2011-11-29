@@ -11,8 +11,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development do
   gem 'rspec-rails'
-  gem 'annotate'
   gem 'faker'
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 end
 
 group :test do
