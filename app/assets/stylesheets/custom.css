@@ -4,6 +4,7 @@ html {
 
 .container {
   width: 800px;
+  
 }
 
 body {
@@ -137,8 +138,6 @@ div.user_info span {
 div.field, div.actions {
   margin-bottom: 10px;
 }
-
-/* error messages */
 
 /* error messages */
 
