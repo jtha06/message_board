@@ -13,6 +13,7 @@
 #
 
 class User < ActiveRecord::Base
+
   attr_accessible :email, :password, :password_confirmation, :firstname, :lastname
   has_secure_password
   
@@ -38,6 +39,4 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
-
-  include Forem::DefaultPermissions
 end

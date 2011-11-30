@@ -1,0 +1,19 @@
+<% title %>  
+  
+<table>  
+  <tr>  
+    <th width="30%">Post Title</th>  
+    <th width="70%">Content</th>  
+  </tr>  
+  <% for post in @topic.posts %>  
+    <tr>  
+      <td><%= link_to h(post.name), post_path(post.id) %>  
+      <td><%= post.content %></td>  
+      <td><%= link_to "Show", topic %></td>  
+      <td><%= link_to "Edit", edit_topic_path(topic) %></td>  
+      <td><%= link_to "Destroy", topic, :confirm => 'Are you sure?', :method => :delete %></td>  
+    </tr>  
+  <% end %>  
+</table>  
+  
+<p><%= link_to "New Post", "/posts/new?topic=#{@topic.id}" %></p>  

@@ -1,4 +1,8 @@
 MessageBoard::Application.routes.draw do
+  resources :posts
+  resources :topics
+  resources :forums
+
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :password_resets
@@ -9,9 +13,11 @@ MessageBoard::Application.routes.draw do
   match '/faq',   :to => 'pages#faq'
   
   match '/signup',  :to => 'users#new'
+  
   match '/login',  :to => 'sessions#new'
   match '/logout', :to => 'sessions#destroy'
   
+  match '/forums', :to => 'forums#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

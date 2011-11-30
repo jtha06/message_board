@@ -1,0 +1,15 @@
+<%= form_for @forum do |f| %>
+  <%= f.error_messages %>
+  <% if params[:forum] %>
+    <input type="hidden" id="topic_forum_id" name="topic[forum_id]" value="<%= params[:forum] %>" />
+  <% end %>  
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

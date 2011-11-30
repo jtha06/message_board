@@ -1,0 +1,9 @@
+one:
+  name: MyString
+  last_poster_id: 1
+  last_post_at: 2011-11-29 23:29:02
+
+two:
+  name: MyString
+  last_poster_id: 1
+  last_post_at: 2011-11-29 23:29:02

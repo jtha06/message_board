@@ -7,7 +7,8 @@ gem 'gravatar_image_tag'
 gem 'will_paginate', '~> 3.0.pre4'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
-gem 'forem', :git => "git://github.com/radar/forem.git"
+gem 'nifty-generators'
+gem "cancan"
 
 group :development do
   gem 'rspec-rails'
@@ -33,3 +34,4 @@ end
 
 
 
+gem "mocha", :group => :test
