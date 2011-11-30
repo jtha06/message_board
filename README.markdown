@@ -1,1 +1,1 @@
-This is a forum application for CollegeZen. It uses Forem engine for Rails 3.1.
+This is a forum application for CollegeZen. 
