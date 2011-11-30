@@ -4,9 +4,10 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'gravatar_image_tag'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.pre4'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
+gem 'forem', :git => "git://github.com/radar/forem.git"
 
 group :development do
   gem 'rspec-rails'
