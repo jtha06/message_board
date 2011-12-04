@@ -49,6 +49,6 @@ class TopicsController < ApplicationController
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
-    redirect_to topics_url, :notice => "Successfully destroyed topic."
+    redirect_to "/forums/#{@topic.forum_id}", :notice => "Successfully destroyed topic."
   end
 end
