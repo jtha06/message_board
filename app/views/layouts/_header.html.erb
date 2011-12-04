@@ -8,6 +8,7 @@
             <li><%= link_to "About us", about_path %></li>
 			<% if signed_in? %>
 			<li><%= link_to "Profile", current_user %></li>
+			<li><%= link_to "Forums", forums_path %></li>
 			<li><%= link_to "Sign out", logout_path %></li>
 			<% else %>
             <li><%= link_to "Sign in", login_path %></li>

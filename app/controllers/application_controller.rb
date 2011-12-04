@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :signed_in?
+  
 	private
 
 	def current_user

@@ -8,7 +8,7 @@
   </tr>
   <% for topic in @topics %>
     <tr>
-      <td><%= topic.name %></td>
+      <td><h4><%= link_to h(topic.name), posts_path %></h4> </td>
       <td><%= topic.last_poster_id %></td>
       <td><%= topic.last_post_at %></td>
       <td><%= link_to "Show", topic %></td>

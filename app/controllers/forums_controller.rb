@@ -27,15 +27,14 @@ class ForumsController < ApplicationController
   def update
     @forum = Forum.find(params[:id])
     if @forum.update_attributes(params[:forum])
-      redirect_to @forum, :notice  => "Successfully updated forum."
+      redirect_to forum_path, :notice  => "Successfully updated forum."
     else
       render :action => 'edit'
     end
   end
 
   def destroy
-    @forum = Forum.find(params[:id])
-    @forum.destroy
-    redirect_to forums_url, :notice => "Successfully destroyed forum."
+    Forum.find(params[:id]).destroy
+    redirect_to '/forums', :notice => "Successfully destroyed forum."
   end
 end

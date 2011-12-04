@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    @user = User.new(:zenpoints => 0)
   end
  
   def show
@@ -10,10 +10,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user])	
+	@user.set_zenpoints(0)
     if @user.save
 	  flash[:success] = "Welcome to CollegeZen!"
-      redirect_to @user
+      redirect_to root_path
     else
       @title = "Sign up"
       render 'new'

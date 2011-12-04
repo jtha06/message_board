@@ -1,19 +1,18 @@
-<% title %>  
+<h1><%= @topic.name %></h1>  
   
-<table>  
-  <tr>  
-    <th width="30%">Post Title</th>  
-    <th width="70%">Content</th>  
-  </tr>  
-  <% for post in @topic.posts %>  
-    <tr>  
-      <td><%= link_to h(post.name), post_path(post.id) %>  
-      <td><%= post.content %></td>  
-      <td><%= link_to "Show", topic %></td>  
-      <td><%= link_to "Edit", edit_topic_path(topic) %></td>  
-      <td><%= link_to "Destroy", topic, :confirm => 'Are you sure?', :method => :delete %></td>  
-    </tr>  
-  <% end %>  
-</table>  
+<% for post in @topic.posts %>  
+<div class="post">  
+  <span class="left">
+    <span>Posted by: <%= link_to post.user.firstname, user_url(post.user) %></span><br /><br />
+	<%= link_to "Edit", edit_post_path(post) %><br />
+    <%= link_to "Delete", post, :confirm => 'Are you sute?', :method => :delete %>
+  </span>  
+  <span class="right"><%= post.content %></span>  
+</div>  
+<% end %>  
   
-<p><%= link_to "New Post", "/posts/new?topic=#{@topic.id}" %></p>  
+<p>  
+  <%= link_to "Reply", "#{new_post_path}?topic=#{@topic.id}" %> |  
+  <%= link_to "Destroy Topic", @topic, :confirm => 'Are you sure?', :method => :delete %> |  
+  <%= link_to "View All", forum_path(@topic.forum_id) %>  
+</p>  

@@ -14,9 +14,10 @@
 
 class User < ActiveRecord::Base
 
-  attr_accessible :email, :password, :password_confirmation, :firstname, :lastname
+  attr_accessible :email, :password, :password_confirmation, :firstname, :lastname, :zenpoints
   has_secure_password
-  
+  has_many :posts  
+  has_many :topics  
   validates_presence_of :email, :firstname, :lastname
   validates_length_of :firstname, :lastname, :maximum => 20
   validates_length_of :password, :maximum => 20
@@ -39,4 +40,19 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
+  
+  def set_zenpoints(newpoints)
+    self.zenpoints = newpoints
+	save
+  end
+
+  def increase_zenpoints(amount)
+	self.zenpoints += amount
+	save
+  end
+
+  def decrease_zenpoints(amount)
+	self.zenpoints -= amount
+	save
+  end  
 end

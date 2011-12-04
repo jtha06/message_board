@@ -1,4 +1,4 @@
-<% title %>  
+<h1><%= @forum.name  %></h1>  
   
 <table>  
   <tr>  
@@ -9,16 +9,11 @@
   <% for topic in @forum.topics %>  
     <tr>  
       <td><%= link_to h(topic.name), topic_path(topic.id) %>  
-      <td><%= topic.posts - 1 %></td>  
-	  <td>
-	    <%= distance_of_time_in_words_to_now topic.last_post_at %> ago by <%= link_to topic.user.username, "/users/#{topic.last_poster_id}" %>
-	  </td>  
-      <td><%= link_to "Show", topic %></td>  
-      <td><%= link_to "Edit", edit_topic_path(topic) %></td>  
+      <td><%= topic.posts.count %></td>  
+      <td class="right"><%= distance_of_time_in_words_to_now topic.last_post_at %> ago by <%= link_to topic.user.firstname, "/users/#{topic.last_poster_id}" %></td>  
       <td><%= link_to "Destroy", topic, :confirm => 'Are you sure?', :method => :delete %></td>  
     </tr>  
   <% end %>  
 </table>  
   
-<p><%= link_to "New Topic", "/topics/new?forum=#{@forum.id}" %></p>  
-
+<p><%= link_to "New Topic", "/topics/new?forum=#{@forum.id}" %></p>
