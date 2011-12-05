@@ -3,9 +3,15 @@
 <% for post in @topic.posts %>  
 <div class="post">  
   <span class="left">
-    <span>Posted by: <%= link_to post.user.firstname, user_url(post.user) %></span><br /><br />
-	<%= link_to "Edit", edit_post_path(post) %><br />
-    <%= link_to "Delete", post, :confirm => 'Are you sute?', :method => :delete %>
+    <span>Likes: <%=post.likes=%></span><br />
+	<span>Posted by: <%= link_to post.user.to_s, user_url(post.user) %></span><br /><br />
+	<% if post.user.id == current_user.id %>
+	  <%= link_to "Edit", edit_post_path(post) %>
+      <%= link_to "Delete", post, :confirm => 'Are you sute?', :method => :delete %>
+	<% else %>
+	  <%= link_to "Like", @topic, :controller => "post", :action => "like"%>
+	  <%= link_to "Dislike", @topic %>
+	<% end %>
   </span>  
   <span class="right"><%= post.content %></span>  
 </div>  

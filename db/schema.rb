@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111130051851) do
+ActiveRecord::Schema.define(:version => 20111204071325) do
 
   create_table "forums", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20111130051851) do
     t.datetime "updated_at"
     t.integer  "topic_id"
     t.integer  "user_id"
+    t.integer  "likes"
   end
 
   create_table "topics", :force => true do |t|

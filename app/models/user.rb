@@ -46,13 +46,9 @@ class User < ActiveRecord::Base
 	save
   end
 
-  def increase_zenpoints(amount)
-	self.zenpoints += amount
-	save
-  end
-
-  def decrease_zenpoints(amount)
-	self.zenpoints -= amount
-	save
-  end  
+  def to_s
+    @firstname = self.firstname
+	@lastname = self.lastname
+	"#{@firstname} #{@lastname}"
+  end	
 end

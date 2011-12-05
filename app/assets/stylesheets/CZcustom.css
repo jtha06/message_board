@@ -183,7 +183,7 @@ div.field, div.actions {
 .error_messages ul li {
   font-size: 12px;
 }
-
+table {width:100%;}
 table tr th {background:#83BFDE;; color:#fff; padding:0; border:#83BFDE solid 1px;}  
 table tr td {border:1px #ccc solid; padding:5px;}  
 table tr td.rightright {background: #eee;}  

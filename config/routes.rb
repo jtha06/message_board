@@ -1,6 +1,10 @@
 MessageBoard::Application.routes.draw do
-  resources :posts
-  resources :topics
+  resources :posts do
+    collection do
+      post 'like'
+    end
+  end
+  resources :topics 
   resources :forums
 
   resources :users

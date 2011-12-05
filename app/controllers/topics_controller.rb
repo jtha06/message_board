@@ -40,7 +40,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update_attributes(params[:topic])
-      redirect_to @topic, :notice  => "Successfully updated topic."
+      redirect_to "/forums/#{@topic.forum_id}", :notice  => "Successfully updated topic."
     else
       render :action => 'edit'
     end
