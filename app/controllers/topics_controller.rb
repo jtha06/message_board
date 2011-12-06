@@ -22,6 +22,7 @@ class TopicsController < ApplicationController
 	  @post = Post.new(:content => params[:post][:content],
              	       :topic_id => Topic.first.id,
 					   :user_id => current_user.id)
+	  @post.set_likes(0)			   
       if @post.save  
         flash[:notice] = "Successfully created topic."  
         redirect_to "/forums/#{@topic.forum_id}"  

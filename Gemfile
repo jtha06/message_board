@@ -9,6 +9,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
 gem 'nifty-generators'
 gem "cancan"
+gem "pg"
 
 group :development do
   gem 'rspec-rails'

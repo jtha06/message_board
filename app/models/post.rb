@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   
   def set_likes(num_likes)
     self.likes = num_likes
+	save
   end	
   
   def like
